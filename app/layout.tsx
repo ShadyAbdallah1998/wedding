@@ -1,22 +1,16 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Cairo } from "next/font/google";
 import "./globals.css";
 
-const headingFont = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-heading",
-});
-
-const bodyFont = Manrope({
-  subsets: ["latin"],
+const cairo = Cairo({
+  subsets: ["arabic", "latin"],
   weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-body",
+  variable: "--font-cairo",
 });
 
 export const metadata: Metadata = {
-  title: "Shady & Nourhan Wedding Invitation",
-  description: "Wedding invitation for Shady Abdallah and Nourhan Momen.",
+  title: "دعوة زفاف شادي و نورهان",
+  description: "دعوة زفاف شادي عبدالله و نورهان مومن.",
 };
 
 export default function RootLayout({
@@ -25,10 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${headingFont.variable} ${bodyFont.variable} antialiased`}
-    >
+    <html lang="ar" dir="rtl" className={`${cairo.variable} antialiased`}>
       <body>{children}</body>
     </html>
   );
