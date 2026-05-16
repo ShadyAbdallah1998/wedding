@@ -92,13 +92,13 @@ export default function Home() {
             </p>
           </div>
           <div className="details-grid">
-            <div className="detail-card">
+            <div className="detail-card card-rose">
               <h3>استقبال الضيوف</h3>
               <p>
                 نتشرف باستقبالكم قبل بداية الحفل بوقت قصير للترحيب وتبادل التهاني.
               </p>
             </div>
-            <div className="detail-card">
+            <div className="detail-card card-sage">
               <h3>تفاصيل الأمسية</h3>
               <p>
                 أمسية راقية مليئة باللحظات الهادئة والكلمات الدافئة من الأحبة.

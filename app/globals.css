@@ -271,6 +271,21 @@ a {
   border-radius: 24px;
   border: 1px solid rgba(200, 167, 107, 0.2);
   box-shadow: 0 14px 40px rgba(32, 24, 20, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.detail-card:hover {
+  transform: translateY(-4px);
+}
+
+.card-rose {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 213, 198, 0.4));
+  border-color: rgba(240, 213, 198, 0.6);
+}
+
+.card-sage {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(200, 210, 194, 0.4));
+  border-color: rgba(200, 210, 194, 0.6);
 }
 
 .detail-card h3 {
