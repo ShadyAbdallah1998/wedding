@@ -1,16 +1,38 @@
+"use client";
+
+import type { MouseEvent } from "react";
+
 const googleMapsLink = "https://maps.app.goo.gl/wvGKq1hzna1SsJ9w6";
 const googleMapsEmbedUrl =
-  "https://www.google.com/maps?q=30.788652,30.995450&output=embed";
+  "https://www.google.com/maps?q=30.8264078,30.9900287&z=16&output=embed";
 const weddingDate = "9 يوليو 2026";
 const weddingTime = "9:00 مساءً - 11:30 مساءً";
 
 export default function Home() {
+  const handleLocationClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    const section = document.getElementById("location");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    const cleanUrl = `${window.location.pathname}${window.location.search}`;
+    window.history.replaceState(null, "", cleanUrl);
+  };
+
   return (
     <div className="page">
       <header className="hero">
         <div className="hero__ornament hero__ornament--left" aria-hidden="true" />
         <div className="hero__ornament hero__ornament--right" aria-hidden="true" />
         <div className="hero__panel">
+          <div className="notice-card">
+            <h3>رجاء بكل محبة 🚫🤍</h3>
+            <p>
+              يرجى <strong>عدم التصوير بالهواتف</strong>.
+              <br />
+              لدينا مصور خاص، ونسعد بالتقاط الصور معكم!
+            </p>
+          </div>
           <div className="hero__seal" aria-hidden="true">
             <span>ش</span>
             <span className="seal__amp">&</span>
@@ -18,10 +40,12 @@ export default function Home() {
           </div>
           <p className="eyebrow">دعوة زفاف</p>
           <h1 className="title">
-            شادي عبدالله <span className="amp">&</span> نورهان مومن
+            <span className="title__names">شادي عبدالله أحمد</span>
+            <span className="amp">&</span>
+            <span className="title__names">نورهان مؤمن الشيتي</span>
           </h1>
           <p className="subtitle">
-            بكل محبة وفرح، تتشرف عائلتا شادي عبد الله ونورهان مومن
+            بكل محبة وفرح، تتشرف عائلتا شادي عبدالله ونورهان مؤمن
             بدعوتكم لمشاركتهم ليلة العمر وبدء فصل جديد من حياتهما.
           </p>
           <div className="hero__meta">
@@ -39,7 +63,11 @@ export default function Home() {
             </div>
           </div>
           <div className="hero__actions">
-            <a className="btn btn--primary" href="#location">
+            <a
+              className="btn btn--primary"
+              href="#location"
+              onClick={handleLocationClick}
+            >
               عرض الموقع
             </a>
             <a
@@ -76,12 +104,6 @@ export default function Home() {
                 أمسية راقية مليئة باللحظات الهادئة والكلمات الدافئة من الأحبة.
               </p>
             </div>
-            <div className="detail-card">
-              <h3>تصوير وذكريات</h3>
-              <p>
-                ركن مخصص لالتقاط الصور والاحتفاظ بذكريات جميلة مع العائلة والأصدقاء.
-              </p>
-            </div>
           </div>
         </section>
 
@@ -114,14 +136,14 @@ export default function Home() {
                   <span>الوصول</span>
                   <p>يفتح الاستقبال قبل بداية الحفل بثلاثين دقيقة.</p>
                 </div>
-                <div className="info-item">
+                {/* <div className="info-item">
                   <span>المواقف</span>
                   <p>تتوفر مواقف سيارات داخل القاعة للضيوف.</p>
-                </div>
-                <div className="info-item">
+                </div> */}
+                {/* <div className="info-item">
                   <span>الزي</span>
                   <p>الرجاء اختيار زي أنيق يليق بالمناسبة.</p>
-                </div>
+                </div> */}
               </div>
               <div className="location__actions">
                 <a
